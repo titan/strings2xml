@@ -1,0 +1,15 @@
+TARGET = strings2xml
+SRC = strings2xml.hs
+
+all: $(TARGET)
+
+$(TARGET): $(SRC)
+	ghc -O3 $(SRC) -o $@
+	strip $@
+
+clean:
+	rm -f $(TARGET)
+	rm -f *.o
+	rm -f *.hi
+
+.PHONY: all clean
