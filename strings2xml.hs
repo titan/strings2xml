@@ -19,7 +19,7 @@ keyvalue = liftM5 g k eq v comma nl
     where k = key <?> "key"
           v = str <?> "value"
           eq = between spaces spaces (char '=')
-          comma = char ';' <?> "comma"
+          semicolon = char ';' <?> "semicolon"
           nl = eol
           g x _ y _ _ = (x, y)
 
