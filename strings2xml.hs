@@ -15,7 +15,7 @@ key = try key' <|> key_
     where key' = str
           key_ = many1 $ noneOf " \t="
 
-keyvalue = liftM5 g k eq v comma nl
+keyvalue = liftM5 g k eq v semicolon nl
     where k = key <?> "key"
           v = str <?> "value"
           eq = between spaces spaces (char '=')
